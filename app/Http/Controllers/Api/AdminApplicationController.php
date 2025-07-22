@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Api\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Application;
+use App\Notifications\ApplicationStatusUpdated;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\Rule;
 
-class ApplicationController extends Controller
+class AdminApplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +20,7 @@ class ApplicationController extends Controller
             'status' => ['nullable', 'string', Rule::in(['pending', 'processing', 'approved', 'rejected'])],
         ]);
 
-        $applications = Application::with('user:id,name,email') // Chỉ lấy thông tin cần thiết của user
+        $applications = Application::with('user:id,name,email')
             ->when($request->status, function ($query, $status) {
                 return $query->where('status', $status);
             })
@@ -48,6 +49,9 @@ class ApplicationController extends Controller
 
         $application->status = $validated['status'];
         $application->save();
+
+        // Send notification to the user
+        $application->user->notify(new ApplicationStatusUpdated($application));
 
         return response()->json($application);
     }

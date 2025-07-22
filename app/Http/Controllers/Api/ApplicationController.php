@@ -20,7 +20,7 @@ class ApplicationController extends Controller
     {
         $applications = $request->user()->applications()->with('aspirations.major')->latest()->get();
 
-        return response()->json($applications);
+        return response()->json(['data' => $applications]);
     }
 
     /**
