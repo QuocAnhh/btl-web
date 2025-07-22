@@ -1,19 +1,15 @@
 # Hệ thống Backend - Tư vấn tuyển sinh
 
-Đây là dự án backend được xây dựng bằng Laravel 11, cung cấp một bộ RESTful API cho hệ thống tư vấn tuyển sinh.
+Đây là dự án backend được xây dựng bằng Laravel 11, cung cấp một bộ RESTful API cho hệ thống tư vấn tuyển sinh. Hệ thống được thiết kế để hoạt động với một giao diện frontend duy nhất, nhưng hiển thị các chức năng khác nhau dựa trên vai trò của người dùng (Thí sinh hoặc Quản trị viên).
 
-Hệ thống bao gồm các chức năng chính:
-- Gợi ý ngành học dựa trên điểm số.
-- Nộp hồ sơ xét tuyển trực tuyến (bao gồm upload tài liệu).
-- Quản lý nguyện vọng của thí sinh.
-- Trang quản trị để quản lý hồ sơ, ngành học, và người dùng.
+## Chức năng chính
 
-## Yêu cầu hệ thống
-
-- PHP >= 8.2
-- Composer
-- MySQL
-- Một web server (ví dụ: Nginx, Apache trong XAMPP/LAMP)
+-   **Gợi ý ngành học:** Cung cấp gợi ý ngành học dựa trên điểm thi hoặc học bạ.
+-   **Nộp hồ sơ trực tuyến:** Cho phép thí sinh nộp hồ sơ, bao gồm nhiều nguyện vọng và các tài liệu đính kèm (học bạ, CCCD...).
+-   **Quản lý hồ sơ (Thí sinh):** Thí sinh có thể xem lại lịch sử các hồ sơ đã nộp và theo dõi trạng thái.
+-   **Quản lý hồ sơ (Admin):** Quản trị viên có thể xem, lọc và cập nhật trạng thái (ví dụ: Chờ xử lý, Đã duyệt, Đã từ chối) cho tất cả hồ sơ.
+-   **Hệ thống thông báo:** Tự động gửi thông báo cho thí sinh khi trạng thái hồ sơ của họ được cập nhật.
+-   **Dashboard hợp nhất:** Một giao diện duy nhất (`/dashboard`) phục vụ cả thí sinh và quản trị viên.
 
 ## Hướng dẫn cài đặt và khởi chạy
 
@@ -49,7 +45,7 @@ Hệ thống bao gồm các chức năng chính:
     ```
 
 5.  **Tạo cấu trúc database và dữ liệu mẫu**
-    Lệnh này sẽ tạo tất cả các bảng và điền dữ liệu mẫu (ngành học, người dùng admin...).
+    Lệnh này sẽ tạo tất cả các bảng và điền dữ liệu mẫu (ngành học, người dùng admin/student).
     ```bash
     php artisan migrate:fresh --seed
     ```
@@ -64,52 +60,22 @@ Hệ thống bao gồm các chức năng chính:
     ```bash
     php artisan serve
     ```
-    Backend sẽ chạy tại `http://127.0.0.1:8000`.
+    Backend sẽ chạy tại `http://127.0.0.1:8000`. Bạn có thể truy cập trang dashboard kiểm thử tại `http://127.0.0.1:8000/dashboard`.
 
 ---
 
-## Cấu trúc thư mục
+## Tài khoản thử nghiệm
 
-Dự án tuân theo cấu trúc tiêu chuẩn của Laravel. Dưới đây là vai trò của các thư mục quan trọng:
+Sau khi chạy `migrate:fresh --seed`, hệ thống sẽ tạo sẵn 2 tài khoản để kiểm thử:
 
-| Thư mục | Chức năng |
-| :--- | :--- |
-| **`app/`** | Chứa code logic chính của ứng dụng (Models, Controllers, Middleware, Requests...). |
-| **`bootstrap/`** | Chứa các file khởi động framework và cache cấu hình. |
-| **`config/`** | Chứa tất cả các file cấu hình của ứng dụng. |
-| **`database/`** | Chứa các "bản thiết kế" database (`migrations`) và dữ liệu mẫu (`seeders`). |
-| **`public/`** | Thư mục gốc cho web server, chứa file `index.php` và các assets công khai. |
-| **`resources/`** | Chứa các file "thô" như views (`.blade.php`), code CSS/JS chưa biên dịch. |
-| **`routes/`** | Định nghĩa tất cả các URL (endpoints) của ứng dụng (`web.php`, `api.php`). |
-| **`storage/`** | Chứa các file được tạo ra bởi ứng dụng như log, file upload, cache... |
-| **`vendor/`** | Chứa mã nguồn của Laravel và các thư viện bên thứ ba (quản lý bởi Composer). |
+-   **Quản trị viên (Admin):**
+    -   Email: `admin@example.com`
+    -   Password: `password`
+-   **Thí sinh (Student):**
+    -   Email: `student@example.com`
+    -   Password: `password`
 
-
-## Hướng dẫn kết nối cho Frontend
-
-Backend và Frontend là hai hệ thống riêng biệt, giao tiếp với nhau qua các API endpoint.
-
-### Vấn đề CORS
-
-Khi Frontend chạy ở một domain khác (ví dụ `localhost:3000`) và gọi API ở `localhost:8000`, trình duyệt sẽ chặn request do chính sách CORS. Để giải quyết, backend đã được cấu hình để cho phép các request này. Cần đảm bảo file `config/cors.php` có cấu hình phù hợp, ví dụ cho phép tất cả:
-```php
-// config/cors.php
-'allowed_origins' => ['*'],
-```
-
-### Quy trình xác thực (Authentication Flow)
-
-*(Lưu ý: Hiện tại middleware xác thực đang được tạm tắt để kiểm tra. Khi được bật lại, đây là quy trình chuẩn.)*
-
-Hệ thống sử dụng **Token-based authentication (Laravel Sanctum)**.
-
-1.  **Đăng nhập:** Frontend gửi request `POST` đến `/api/login` với `email` và `password`.
-2.  **Nhận Token:** Nếu thành công, backend sẽ trả về một `access_token`.
-3.  **Lưu Token:** Frontend phải lưu lại token này (ví dụ trong Local Storage).
-4.  **Gửi Token với mỗi Request:** Với tất cả các request cần xác thực sau đó, Frontend phải đính kèm token vào header `Authorization`.
-    ```
-    Authorization: Bearer <your_saved_token>
-    ```
+Đăng nhập với các tài khoản này trên trang `/dashboard` để xem các giao diện tương ứng.
 
 ---
 
@@ -117,10 +83,24 @@ Hệ thống sử dụng **Token-based authentication (Laravel Sanctum)**.
 
 URL cơ sở: `http://127.0.0.1:8000/api`
 
-### 1. Gợi ý ngành học
+### 1. Xác thực & Người dùng
+
+#### `POST /register`
+Đăng ký tài khoản mới cho thí sinh.
+
+#### `POST /login`
+Đăng nhập để nhận token xác thực. Trả về `access_token` và thông tin `user` (bao gồm `is_admin`).
+
+#### `POST /logout`
+*Yêu cầu xác thực.* Hủy token hiện tại.
+
+#### `GET /user`
+*Yêu cầu xác thực.* Lấy thông tin của người dùng đang đăng nhập.
+
+### 2. Gợi ý ngành học
 
 #### `POST /suggestions/by-score`
-Gợi ý các ngành học phù hợp dựa trên điểm số của thí sinh.
+Gợi ý các ngành học phù hợp dựa trên điểm số của thí sinh (không cần xác thực).
 
 **Request Body (JSON):**
 ```json
@@ -134,23 +114,7 @@ Gợi ý các ngành học phù hợp dựa trên điểm số của thí sinh.
 }
 ```
 
-**Response thành công (200 OK):**
-```json
-{
-    "message": "Suggested majors based on your scores.",
-    "data": [
-        {
-            "id": 1,
-            "name": "Công nghệ thông tin",
-            "code": "7480201",
-            "description": "Ngành học về...",
-            "matched_criterion": "Xét tuyển khối A00 - Điểm thi THPT 2024"
-        }
-    ]
-}
-```
-
-### 2. Nộp và xem hồ sơ (User)
+### 3. Hồ sơ (Thí sinh)
 
 *(Yêu cầu xác thực)*
 
@@ -158,52 +122,37 @@ Gợi ý các ngành học phù hợp dựa trên điểm số của thí sinh.
 Nộp một hồ sơ xét tuyển mới. Request này phải là `multipart/form-data`.
 
 **Request Body (form-data):**
-- `aspirations[0][major_id]`: (number) ID của ngành
-- `aspirations[0][priority]`: (number) Thứ tự ưu tiên
-- `aspirations[1][major_id]`: ...
-- `aspirations[1][priority]`: ...
-- `documents[hoc_ba]`: (file) File học bạ
-- `documents[cccd]`: (file) File CCCD
-- `documents[bang_tot_nghiep]`: (file, optional)
-
-**Response thành công (201 Created):**
-Trả về chi tiết hồ sơ vừa tạo, bao gồm danh sách nguyện vọng và tài liệu.
+-   `aspirations[0][major_id]`: (number) ID của ngành
+-   `aspirations[0][priority]`: (number) Thứ tự ưu tiên
+-   `...`
+-   `documents[hoc_ba]`: (file) File học bạ
+-   `documents[cccd]`: (file) File CCCD
+-   `documents[bang_tot_nghiep]`: (file)
 
 #### `GET /applications`
 Lấy danh sách các hồ sơ đã nộp của người dùng đang đăng nhập.
 
-#### `GET /applications/{id}`
-Lấy chi tiết một hồ sơ cụ thể.
+#### `GET /applications/{application}`
+Lấy chi tiết một hồ sơ cụ thể mà người dùng sở hữu.
 
----
-
-### 3. Quản lý hồ sơ (Admin)
+### 4. Quản lý Hồ sơ (Admin)
 
 URL cơ sở: `http://127.0.0.1:8000/api/admin`
 
 *(Yêu cầu xác thực và quyền Admin)*
 
 #### `GET /applications`
-Lấy danh sách tất cả hồ sơ trong hệ thống. Có thể lọc theo trạng thái.
+Lấy danh sách tất cả hồ sơ trong hệ thống, có phân trang.
 
 **Query Parameters:**
-- `status` (string, optional): Lọc theo trạng thái (`pending`, `processing`, `approved`, `rejected`).
-  _Ví dụ: `/api/admin/applications?status=pending`_
+-   `status` (string, optional): Lọc theo trạng thái (`pending`, `processing`, `approved`, `rejected`).
+    _Ví dụ: `/api/admin/applications?status=pending`_
 
-**Response thành công (200 OK):**
-Trả về một đối tượng có phân trang (pagination).
-```json
-{
-    "current_page": 1,
-    "data": [
-        // ... danh sách hồ sơ ...
-    ],
-    // ... các thông tin phân trang khác ...
-}
-```
+#### `GET /applications/{application}`
+Lấy chi tiết một hồ sơ bất kỳ trong hệ thống.
 
-#### `PATCH /applications/{id}/status`
-Cập nhật trạng thái của một hồ sơ.
+#### `PATCH /applications/{application}/status`
+Cập nhật trạng thái của một hồ sơ. Khi cập nhật, một thông báo sẽ được gửi đến người dùng.
 
 **Request Body (JSON):**
 ```json
@@ -211,5 +160,13 @@ Cập nhật trạng thái của một hồ sơ.
     "status": "approved" // "processing", "approved", hoặc "rejected"
 }
 ```
-**Response thành công (200 OK):**
-Trả về chi tiết hồ sơ đã được cập nhật. 
+
+### 5. Thông báo (Thí sinh)
+
+*(Yêu cầu xác thực)*
+
+#### `GET /notifications`
+Lấy danh sách tất cả thông báo của người dùng (chưa đọc và đã đọc).
+
+#### `PATCH /notifications/{notification}/read`
+Đánh dấu một thông báo là đã đọc. 
