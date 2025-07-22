@@ -68,13 +68,30 @@ Hệ thống bao gồm các chức năng chính:
 
 ---
 
+## Cấu trúc thư mục
+
+Dự án tuân theo cấu trúc tiêu chuẩn của Laravel. Dưới đây là vai trò của các thư mục quan trọng:
+
+| Thư mục | Chức năng |
+| :--- | :--- |
+| **`app/`** | Chứa code logic chính của ứng dụng (Models, Controllers, Middleware, Requests...). |
+| **`bootstrap/`** | Chứa các file khởi động framework và cache cấu hình. |
+| **`config/`** | Chứa tất cả các file cấu hình của ứng dụng. |
+| **`database/`** | Chứa các "bản thiết kế" database (`migrations`) và dữ liệu mẫu (`seeders`). |
+| **`public/`** | Thư mục gốc cho web server, chứa file `index.php` và các assets công khai. |
+| **`resources/`** | Chứa các file "thô" như views (`.blade.php`), code CSS/JS chưa biên dịch. |
+| **`routes/`** | Định nghĩa tất cả các URL (endpoints) của ứng dụng (`web.php`, `api.php`). |
+| **`storage/`** | Chứa các file được tạo ra bởi ứng dụng như log, file upload, cache... |
+| **`vendor/`** | Chứa mã nguồn của Laravel và các thư viện bên thứ ba (quản lý bởi Composer). |
+
+
 ## Hướng dẫn kết nối cho Frontend
 
 Backend và Frontend là hai hệ thống riêng biệt, giao tiếp với nhau qua các API endpoint.
 
 ### Vấn đề CORS
 
-Khi Frontend chạy ở một domain khác (ví dụ `localhost:3000`) và gọi API ở `localhost:8000`, trình duyệt sẽ chặn request do chính sách CORS. Để giải quyết, backend đã được cấu hình để cho phép các request này. Bạn cần đảm bảo file `config/cors.php` có cấu hình phù hợp, ví dụ cho phép tất cả:
+Khi Frontend chạy ở một domain khác (ví dụ `localhost:3000`) và gọi API ở `localhost:8000`, trình duyệt sẽ chặn request do chính sách CORS. Để giải quyết, backend đã được cấu hình để cho phép các request này. Cần đảm bảo file `config/cors.php` có cấu hình phù hợp, ví dụ cho phép tất cả:
 ```php
 // config/cors.php
 'allowed_origins' => ['*'],
