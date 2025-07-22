@@ -13,12 +13,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Admin User
         \App\Models\User::firstOrCreate(
-            ['email' => 'test@example.com'],
+            ['email' => 'admin@example.com'],
             [
                 'name' => 'Test Admin User',
                 'password' => bcrypt('password'),
                 'is_admin' => true
+            ]
+        );
+        
+        // Student User
+        \App\Models\User::firstOrCreate(
+            ['email' => 'student@example.com'],
+            [
+                'name' => 'Test Student User',
+                'password' => bcrypt('password'),
+                'is_admin' => false
             ]
         );
 
