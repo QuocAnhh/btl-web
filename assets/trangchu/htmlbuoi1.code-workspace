@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "htmlbuoi1",
+			"path": "../../../../htmlbuoi1"
+		},
+		{
+			"name": "QLSV",
+			"path": "C:/xampp/htdocs/QLSV"
+		},
+		{
+			"name": "QLSINHVIEN",
+			"path": "../../../../xmapp/htdocs/QLSINHVIEN"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "BTLWEBFE"
+	}
+}
