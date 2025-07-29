@@ -10,9 +10,31 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Notifications\ApplicationStatusUpdated;
+
 
 class ApplicationController extends Controller
 {
+    public function updateStatus(Request $request, Application $application): JsonResponse
+{
+    // Kiểm tra quyền người dùng (chỉ Admin hoặc quản trị viên được cập nhật)
+    // if (!auth()->user()->isAdmin()) return response()->json(['message' => 'Unauthorized'], 403);
+
+    $request->validate([
+        'status' => 'required|in:approved,rejected,processing',
+    ]);
+
+    $application->status = $request->input('status');
+    $application->save();
+
+    // Gửi thông báo (qua email + database) tới học sinh
+    $application->user->notify(new ApplicationStatusUpdated($application));
+
+    return response()->json([
+        'message' => 'Trạng thái hồ sơ đã được cập nhật và thông báo đã được gửi.',
+        'data' => $application->load('user')
+    ]);
+}
     /**
      * Display a listing of the resource for the authenticated user.
      */

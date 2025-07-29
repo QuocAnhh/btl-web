@@ -8,6 +8,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
+
+
 class ApplicationStatusUpdated extends Notification
 {
     use Queueable;
@@ -29,7 +31,7 @@ class ApplicationStatusUpdated extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['database']; // We will only store in the database for now
+        return ['database', 'mail'];
     }
 
     /**
@@ -50,4 +52,27 @@ class ApplicationStatusUpdated extends Notification
             'message' => $statusMessages[$this->application->status] ?? 'Trạng thái hồ sơ của bạn đã được cập nhật.',
         ];
     }
-}
+
+    /**
+     * Get the mail representation of the notification.
+     */
+    public function toMail(object $notifiable): MailMessage
+   {
+    $statusLabels = [
+        'approved' => 'Đã duyệt',
+        'rejected' => 'Bị từ chối',
+        'processing' => 'Đang xử lý',
+    ];
+
+    $status = $this->application->status;
+    $label = $statusLabels[$status] ?? 'Không xác định';
+
+    return (new MailMessage)
+        ->subject('Cập nhật trạng thái hồ sơ')
+        ->greeting('Xin chào ' . $notifiable->name . '!')
+        ->line('Trạng thái hồ sơ của bạn vừa được cập nhật:')
+        ->line('→ Trạng thái mới: ' . $label)
+        ->action('Xem hồ sơ của bạn', url('/applications/' . $this->application->id))
+        ->line('Cảm ơn bạn đã sử dụng hệ thống!');
+    }
+} 
