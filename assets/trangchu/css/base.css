@@ -1,10 +1,9 @@
 /* variable */
 
 :root {
-    --main-bg: #00377a;
-    --second-bg: #e8f0fe;
+    --main-bg: #5ea1f9;
+    --main-blue: #06283D;
     --text-color: #06283D;
-    --main-yellow: #4437f0;
 }
 /* reset css */
 
@@ -217,7 +216,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #fff;
+    color: #1a1a1a; /* Thay đổi từ #fff thành #1a1a1a để giống với trang tuyển sinh */
     transition: all 0.5s ease;
 }
 
@@ -228,10 +227,6 @@ header.fixed {
     width: 100%;
     z-index: 10;
     height: 80px;
-}
-
-.menu-icon {
-    display: none;
 }
 
 .header__logo {
@@ -258,8 +253,13 @@ header.fixed {
 }
 
 .nav__item-link {
-    font-weight: 1000;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 2rem; /* Tăng từ 1.8rem lên 2rem để giống trang tuyển sinh */
+    color: #1a1a1a;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px 8px;
 }
 
 .nav__item-link:hover {
@@ -268,6 +268,13 @@ header.fixed {
 
 .open-it {
     opacity: 0.4;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 2rem; /* Tăng từ 1.8rem lên 2rem để giống trang tuyển sinh */
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px 8px;
 }
 
 .search {
@@ -286,7 +293,6 @@ header.fixed {
     border-radius: 8px 0 0 8px;
     color: var(--text-color);
 }
-
 
 .search__icon {
     padding: 6px 16px;
@@ -572,6 +578,7 @@ textarea {
 
 footer {
     background-color: var(--main-bg);
+    padding: 15px 42px;
     overflow: hidden;
     color: #fff;
 }
@@ -622,4 +629,60 @@ footer {
 }
 .fa-solid {
     padding-right: 10px;
+}
+
+/* WOW Animation CSS */
+.wow {
+  visibility: hidden;
+}
+
+.wow.animate__animated {
+  visibility: visible;
+}
+
+.animate__zoomIn {
+  animation: zoomIn 1s ease-in-out;
+}
+
+.animate__slideInRight {
+  animation: slideInRight 1s ease-in-out;
+}
+
+.animate__rotateIn {
+  animation: rotateIn 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
