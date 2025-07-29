@@ -74,7 +74,7 @@ slider
 }
 
 .attraction__item:nth-child(even) {
-    background-color: var(--main-yellow);
+    background-color: var(--main-blue);
 }
 
 /** chương trình đào tạo */

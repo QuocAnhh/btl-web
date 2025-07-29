@@ -103,48 +103,7 @@ window.addEventListener("load", function () {
     scrollFunction2();
   }
 
-  // validation form
-
-  var formInput = document.querySelectorAll(".form-input"); 
-  var formValue = [];
-  var submitBtn = document.querySelector("button.submit");
-  var formMessageList = document.querySelector(".form-message-list");
-  var formMessage = document.querySelector(".form-message");
-  var formMessageText = document.querySelector(".message-text");
-
-  for(var i of formInput) {
-    i.onchange = function() {
-      for(var i=0; i<formInput.length; i++) {
-        formValue[i] = formInput[i].value;
-      }
-    }
-  }
-
-  function checkForm(form) {
-    var count= 0;
-    for(var i=0; i<form.length; i++) {
-      if(form[i] != "")
-        count++;
-    }
-    return count;
-  }
-  submitBtn.onclick = function() {
-    var count = checkForm(formValue);
-    if(count>0 && count === formValue.length && count != undefined) {
-      formMessage.classList.add("success","message-show")
-      formMessageText.innerHTML = `<h3>Thành công</h3> Bạn đã đăng kí nhận tư vấn thành công.`;
-      setTimeout(function() {
-        formMessage.classList.remove("success", "message-show");
-      }, 3000)
-    }
-    else {
-      formMessage.classList.add("fail","message-show")
-      formMessageText.innerHTML = `<h3>Thất bại! </h3> Bạn vui lòng điền đày đủ thông tin.`;
-      setTimeout(function() {
-        formMessage.classList.remove("fail", "message-show");
-      }, 3000)
-    }
-  }
+  
 
   // see more button 
   const notiList = document.querySelectorAll(".program__notifications");

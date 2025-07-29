@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUMG- Tuyển sinh </title>
     <link rel="icon" href="">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="./assets/tuyensinh/css/base.css">
     <link rel="stylesheet" type="text/css" href="./assets/tuyensinh/css/main.css">
-    <link rel="stylesheet" href="./assets/tuyensinh/script.js">
+    <link rel="stylesheet" type="text/css" href="./assets/tuyensinh/css/chatbot.css">
+    <script src="./assets/tuyensinh/script.js"></script>
 
 </head>
 <div> 
     <header>
         <div class="header-img">
-            <img src="./assets/img/" alt="logo-humg">
+            <img src="./assets/trangchu/img/logo-removebg-preview.png" alt="logo-humg">
         </div>
         <div class="header-bars">
             <i class="fa-solid fa-bars fa-2xl"></i>
@@ -23,7 +30,6 @@
         <div class="header-list">
             <a href="trangchu.html" class="header-bars__trangchu">Trang chủ</a>
             <a href="#" class="header-bars__nghanhhoc open-it">Tuyển Sinh</a>
-            <a href="hosoxettuyen.html" class="header-bars__thamkhao">Tạo nguyện vọng ảo</a>
         </div>
 
         <div class="list-notification">
@@ -49,10 +55,8 @@
 
 
         <div class="header-list-down">
-            <a href="index.html" class="header-bars__trangchu">Trang chủ</a>
-            <a href="#" class="header-bars__nghanhhoc open-it">Tuyển Sinh</a>
-            <a href="bomon.html" class="header-bars__tuyensinh">Bộ Môn</a>
-            <a href="daotao.html" class="header-bars__thamkhao">Tham Khảo</a>
+            <a href="trangchu.html" class="header-bars__trangchu">Trang chủ</a>
+            <a href="tuyensinh.html" class="header-bars__nghanhhoc open-it">Tuyển Sinh</a>
         </div>
         <div class="header-search">
             <input type="text" class="header-search__input" placeholder="Tìm kiếm ...">
@@ -64,7 +68,7 @@
 
     <div class="p1">
         <div class="p1__img">
-            <img src="./assets/img/" alt="">
+            <img src="./assets/tuyensinh/img/dai-hoc-mo-dia-chat.jpg" alt="anh truong toi">
         </div>
         <div class="p1__welcome">
             <h1>WELCOME TO UNIVERSITY OF MINING AND GEOLOGY</h1>
@@ -78,35 +82,107 @@
             <p>&nbsp; &nbsp; &nbsp;     Nhà trường xác định người học là trung tâm, người thầy truyền cảm hứng.</p>
         </div>
         <div class="p2__form">
-            <div class="form">
-                <h1>CÂU HỎI TUYỂN SINH</h1>
-                <form>
-                    <h4 style="color: black;">ĐĂNG KÍ THÔNG TIN TUYỂN SINH</h4>
-                    <div class="form__name">
-                        <input type="text" value="" id="name" class="form-input">
-                        <label for="name" id="lb-name" class="form-label">Họ và tên</label>
+            <div class="suggestion-section">
+                <div class="suggestion-header">
+                    <div class="suggestion-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <div class="form__mail">
-                        <input type="text" value="" id="mail" class="form-input">
-                        <label for="mail" id="lb-mail" class="form-label">Email</label>
-                    </div>
-                    <div class="form__phone">
-                        <input type="text" value="" id="phone" class="form-input">
-                        <label for="phone" id="lb-phone" class="form-label">Điện thoại</label>
-                    </div>
-                    <div class="form__training">
-                        <select name="training" id="training" class="form-input-hdt">
-                            <option value="cq">Đại học Chính quy (Hệ đại trà)</option>
-                            <option value="clc">Đại học Chính quy (Hệ đại chất lượng cao)</option>
+                    <h2 class="suggestion-title">GỢI Ý NGÀNH HỌC PHÙ HỢP</h2>
+                    <p class="suggestion-subtitle">Nhập điểm thi của bạn để nhận gợi ý ngành học phù hợp với năng lực</p>
+                </div>
+                
+                <div class="suggestion-form">
+                    <div class="form-group">
+                        <label for="admission-method" class="form-label">
+                            <i class="fa-solid fa-list-check"></i>
+                            Phương thức xét tuyển
+                        </label>
+                        <select id="admission-method" class="suggestion-select">
+                            <option value="exam_score">Điểm thi THPT</option>
+                            <option value="transcript_score">Xét học bạ</option>
                         </select>
-                        <label for="training" class="form-label-hdt">Hệ đào tạo</label>
                     </div>
-                    <div class="form__message">
-                        <textarea  style="position: relative;" class="form-input" name="form__messageInput" id="form__messageInput" cols="10" rows="6"></textarea>
-                        <label for="form__messageInput" id="lb-form__messageInput" class="form-label">Message</label>
+                    
+                    <div class="subjects-container">
+                        <div class="subject-input-group">
+                            <div class="subject-input-wrapper">
+                                <label class="subject-label">
+                                    <i class="fa-solid fa-pen"></i>
+                                    Môn học
+                                </label>
+                                <input type="text" class="subject-name" placeholder="Ví dụ: Toán" value="Toán">
+                            </div>
+                            <div class="subject-input-wrapper">
+                                <label class="subject-label">
+                                    <i class="fa-solid fa-star"></i>
+                                    Điểm
+                                </label>
+                                <input type="number" class="subject-score" placeholder="0.0" min="0" max="10" step="0.1" value="8.5">
+                            </div>
+                        </div>
+                        
+                        <div class="subject-input-group">
+                            <div class="subject-input-wrapper">
+                                <label class="subject-label">
+                                    <i class="fa-solid fa-pen"></i>
+                                    Môn học
+                                </label>
+                                <input type="text" class="subject-name" placeholder="Ví dụ: Lý" value="Lý">
+                            </div>
+                            <div class="subject-input-wrapper">
+                                <label class="subject-label">
+                                    <i class="fa-solid fa-star"></i>
+                                    Điểm
+                                </label>
+                                <input type="number" class="subject-score" placeholder="0.0" min="0" max="10" step="0.1" value="8.0">
+                            </div>
+                        </div>
+                        
+                        <div class="subject-input-group">
+                            <div class="subject-input-wrapper">
+                                <label class="subject-label">
+                                    <i class="fa-solid fa-pen"></i>
+                                    Môn học
+                                </label>
+                                <input type="text" class="subject-name" placeholder="Ví dụ: Hóa" value="Hóa">
+                            </div>
+                            <div class="subject-input-wrapper">
+                                <label class="subject-label">
+                                    <i class="fa-solid fa-star"></i>
+                                    Điểm
+                                </label>
+                                <input type="number" class="subject-score" placeholder="0.0" min="0" max="10" step="0.1" value="7.5">
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit">Gửi</button>
-                </form>
+                    
+                    <button class="suggestion-btn" onclick="getMajorSuggestions()">
+                        <i class="fa-solid fa-search"></i>
+                        <span>Tìm ngành gợi ý</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kết quả gợi ý ngành học - Đặt riêng biệt -->
+    <div class="suggestion-results-section">
+        <div class="suggestion-results" id="suggestion-results" style="display: none;">
+            <div class="results-header">
+                <h3 class="results-title">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Kết quả gợi ý ngành học
+                </h3>
+                <p class="results-subtitle">Dựa trên điểm số của bạn, đây là những ngành học phù hợp:</p>
+            </div>
+            <div class="results-container" id="results-container">
+                <!-- Kết quả sẽ được hiển thị ở đây -->
+            </div>
+            <div class="results-actions">
+                <button class="back-to-form-btn" onclick="scrollToForm()">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    Quay lại form
+                </button>
             </div>
         </div>
     </div>
@@ -154,6 +230,8 @@
             Có 5 phương thức xét tuyển:
             </div>
         </div>
+        
+
         <div class="pt-tuyensinh__list">
             <div class="pt-tuyensinh__list-item">
                 <div class="method-item__title">
@@ -218,7 +296,7 @@
                 <p>30 giảng viên cơ hữu được đào tạo từ các trường Đại học uy tín trên Thế Giới và Việt Nam, trong đó có 2 phó giáo sư, 17 Tiến sĩ và 11 Thạc sĩ.</p>
             </div>
             <div class="p3__img">
-                <img src="./assets/" alt="olympic tin hoc cap truong">
+                <img src="./assets/tuyensinh/img/olympic.jpg" alt="giang vien">
             </div>
         </div>
         <div class="p3-it p3-it__mid">
@@ -228,7 +306,7 @@
                 <p>- Phòng thí nghiệm chung: các phòng máy tính, hệ thống mạng cấu hình do WB tài trợ</p>
             </div>
             <div class="p3__img">
-                <img src="./assets/" alt="phong may">
+                <img src="./assets/tuyensinh/img/dai-hoc-mo-dia-chat-2.webp" alt="phong may">
             </div>
         </div>
         <div class="p3-it">
@@ -238,20 +316,20 @@
                 <p>- Một số đối tác: SAMSUNG SRV, VIETTEL Network, FPT Software, FPT Information Solution, FPT Telecom, Misa, CMC, Nashtech, ...</p>
             </div>
             <div class="p3__img">
-                <img src="./assets/" alt="olympic tin hoc cap truong">
+                <img src="./assets/tuyensinh/img/Ky-ket-thoa-thuan-1024x683.jpg" alt="hop dong">
             </div>
         </div>
     </div>
     
 
     <footer>
-        <img src="./assets/" alt="logo-humg">
+        <img src="./assets/trangchu/img/logo-removebg-preview.png" alt="logo-humg">
         <div class="contact">
             <div class="contact__it1">
                 <div class="hn">
                     <p><i class="fa-solid fa-location-dot fa-sm"></i>Địa chỉ: Số 18 phố Viên, P. Đức Thắng, Q. Bắc Từ Liêm, Hà Nội.</p>
                     <p><i class="fa-solid fa-phone fa-sm"></i>Điện thoại: <a href="tel:(84.24) 38389716" style="color:#fff">84.24 38389716</a> - Fax: 84.24 38389716</p>
-                    <p><i class="fa-solid fa-envelope fa-sm"></i>Email: <a href="mailto:humg@humg.edu.vn" style="color:#fff">humg@humg.edu.vn</a></p>
+                    <p><i class="fa-solid fa-envelope fa-sm"></i>Email: <a href="mailto:mail.humg.edu.vn" style="color:#fff">mail.humg.edu.vn</a></p>
                 </div>
                 <div class="map-hn">
                     <h6>Trường Đại học Mỏ Địa chất</h6>
@@ -287,13 +365,38 @@
     </footer>
     <p style="text-align: center; background-color: #012750; padding-top: 30px;padding-bottom: 70px;">
         <a href="#" style="font-size: 14px;">
-            @2023 Bản quyền thuộc Trường Đại học Mỏ Địa chất (N8)
+            @2025 Bản quyền thuộc Trường Đại học Mỏ Địa chất
         </a>
     </p>
     
     <div class="btn-top">
         <i class="fa-solid fa-circle-up fa-bounce fa-xl" style="color: #181818;"></i>   
     </div>
-  
+
+    <!-- Chatbot Tư vấn tuyển sinh -->
+    <div class="chat-toggle" onclick="toggleChat()">
+        <i class="fa-solid fa-comments"></i>
+    </div>
+
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Tư vấn tuyển sinh</span>
+            <button class="chat-close" onclick="toggleChat()">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div><strong>Hỗ trợ:</strong> Xin chào! Tôi là trợ lý tư vấn tuyển sinh. Bạn có thể hỏi về: học phí, điểm chuẩn, thời gian nhập học, điều kiện xét học bạ, hoặc thông tin tuyển sinh.</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Nhập câu hỏi của bạn...">
+            <button onclick="sendMessage()">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="./assets/tuyensinh/chatbot.js"></script>
 </body>
 </html>
