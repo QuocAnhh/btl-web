@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Quản Trị - HUMG</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- Admin CSS -->
+    <link href="./assets/admin/admin.css" rel="stylesheet" />
+
+    <!-- Admin JavaScript -->
+    <script src="./assets/admin/admin.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <img
+            src="./assets/trangchu/img/logo-removebg-preview.png"
+            alt="HUMG Logo"
+          />
+          <h1>Trang Quản Trị</h1>
+        </div>
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div>
+            <div id="userName">Admin</div>
+            <button class="logout-btn" onclick="dangXuat()">
+              <i class="fas fa-sign-out-alt"></i> Đăng xuất
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <h3>Menu Quản Trị</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a
+                href="#"
+                class="menu-link active"
+                onclick="hienThiTrang('tongQuan')"
+              >
+                <i class="fas fa-tachometer-alt"></i>
+                Tổng quan
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link" onclick="hienThiTrang('hoSo')">
+                <i class="fas fa-file-alt"></i>
+                Quản lý hồ sơ
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link" onclick="hienThiTrang('nguoiDung')">
+                <i class="fas fa-users"></i>
+                Quản lý người dùng
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link" onclick="hienThiTrang('thongBao')">
+                <i class="fas fa-bell"></i>
+                Thông báo
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link" onclick="hienThiTrang('caiDat')">
+                <i class="fas fa-cog"></i>
+                Cài đặt
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+          <!-- Tổng quan -->
+          <div id="tongQuan" class="page-content">
+            <h2 class="page-title">
+              <i class="fas fa-tachometer-alt"></i>
+              Tổng quan hệ thống
+            </h2>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number" id="tongHoSo">0</div>
+                <div class="stat-label">Tổng hồ sơ</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" id="hoSoCho">0</div>
+                <div class="stat-label">Hồ sơ chờ xử lý</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" id="hoSoDuyet">0</div>
+                <div class="stat-label">Hồ sơ đã duyệt</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" id="hoSoTuChoi">0</div>
+                <div class="stat-label">Hồ sơ từ chối</div>
+              </div>
+            </div>
+
+            <div class="recent-applications">
+              <h3>Hồ sơ gần đây</h3>
+              <div class="table-container">
+                <table class="data-table" id="recentTable">
+                  <thead>
+                    <tr>
+                      <th>Thí sinh</th>
+                      <th>Ngày nộp</th>
+                      <th>Trạng thái</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recentTableBody">
+                    <!-- Dữ liệu sẽ được load từ API -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quản lý hồ sơ -->
+          <div id="hoSo" class="page-content" style="display: none">
+            <h2 class="page-title">
+              <i class="fas fa-file-alt"></i>
+              Quản lý hồ sơ
+            </h2>
+
+            <div class="filters">
+              <div class="filter-group">
+                <label>Trạng thái:</label>
+                <select
+                  class="filter-select"
+                  id="filterTrangThai"
+                  onchange="locHoSo()"
+                >
+                  <option value="">Tất cả</option>
+                  <option value="pending">Chờ xử lý</option>
+                  <option value="processing">Đang xử lý</option>
+                  <option value="approved">Đã duyệt</option>
+                  <option value="rejected">Từ chối</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Tìm kiếm:</label>
+                <input
+                  type="text"
+                  class="filter-select"
+                  id="searchInput"
+                  placeholder="Tìm theo tên thí sinh..."
+                  onkeyup="timKiemHoSo()"
+                />
+              </div>
+            </div>
+
+            <div class="table-container">
+              <table class="data-table" id="applicationsTable">
+                <thead>
+                  <tr>
+                    <th>Thí sinh</th>
+                    <th>Email</th>
+                    <th>Ngày nộp</th>
+                    <th>Nguyện vọng</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="applicationsTableBody">
+                  <!-- Dữ liệu sẽ được load từ API -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Quản lý người dùng -->
+          <div id="nguoiDung" class="page-content" style="display: none">
+            <h2 class="page-title">
+              <i class="fas fa-users"></i>
+              Quản lý người dùng
+            </h2>
+            <p>Chức năng đang phát triển...</p>
+          </div>
+
+          <!-- Thông báo -->
+          <div id="thongBao" class="page-content" style="display: none">
+            <h2 class="page-title">
+              <i class="fas fa-bell"></i>
+              Quản lý thông báo
+            </h2>
+            <p>Chức năng đang phát triển...</p>
+          </div>
+
+          <!-- Cài đặt -->
+          <div id="caiDat" class="page-content" style="display: none">
+            <h2 class="page-title">
+              <i class="fas fa-cog"></i>
+              Cài đặt hệ thống
+            </h2>
+            <p>Chức năng đang phát triển...</p>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Modal Chi tiết hồ sơ -->
+    <div id="modalChiTiet" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Chi tiết hồ sơ</h3>
+          <span class="close" onclick="dongModal()">&times;</span>
+        </div>
+        <div id="modalContent">
+          <!-- Nội dung modal -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

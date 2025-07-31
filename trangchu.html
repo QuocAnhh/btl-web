@@ -1,353 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="./assets/trangchu/css/base.css" rel="stylesheet">
-    <link href="./assets/trangchu/css/main.css" rel="stylesheet">
-    <link href="./assets/trangchu/css/rep.css" rel="stylesheet">
-    <title>humg- Trang chủ</title>
-</head>
-<body>
-    <header>
-        <div class="header__logo">
-            <br>
-            <img src="./assets/trangchu/img/logo-removebg-preview.png" width="500" height="auto" alt="logo-humg">
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <div class="header__menu">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="./trangchu.html" class="nav__item-link open-it">Trang chủ</a></li>
-                <li class="nav__item"><a href="./tuyensinh.html" class="nav__item-link">Tuyển sinh</a></li>
-           
-            </ul>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="./assets/trangchu/css/base.css" rel="stylesheet" />
+    <link href="./assets/trangchu/css/main.css" rel="stylesheet" />
+    <link href="./assets/trangchu/css/rep.css" rel="stylesheet" />
+    <title>humg- Trang chủ</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__logo">
+        <br />
+        <img
+          src="./assets/trangchu/img/logo-removebg-preview.png"
+          width="500"
+          height="auto"
+          alt="logo-humg"
+        />
+      </div>
+
+      <div class="header__menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="./trangchu.html" class="nav__item-link open-it"
+              >Trang chủ</a
+            >
+          </li>
+          <li class="nav__item">
+            <a href="./tuyensinh.html" class="nav__item-link">Tuyển sinh</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header__search">
+        <div class="search">
+          <input type="text" class="search__input" placeholder="Tìm kiếm ..." />
+          <div class="search__icon" style="background-color: var(--text-color)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
         </div>
-        <div class="header__search">
-            <div class="search">
-                <input type="text" class="search__input" placeholder="Tìm kiếm ..." >
-                <div class="search__icon" style="background-color:var(--text-color)" >
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
-        </div>
+      </div>
     </header>
     <section>
-        <div class="slider">
-            <i class="fa-solid fa-chevron-left slider-prev"></i>
+      <div class="slider">
+        <i class="fa-solid fa-chevron-left slider-prev"></i>
 
-            <div class="slider-wrap">
-                <ul class="slider-main">
-                    <li class="slider-item"><img src="./assets/trangchu/img/anhdep1.jpg" alt="slider image"></li>
-                    <li class="slider-item"><img src="./assets/trangchu/img/genai.jpg" alt="slider image"></li>
-                    <li class="slider-item"><img src="./assets/trangchu/img/vn uk 2.jpg" alt="slider image"></li>
-                </ul>
+        <div class="slider-wrap">
+          <ul class="slider-main">
+            <li class="slider-item">
+              <img src="./assets/trangchu/img/genai.jpg" alt="slider image" />
+            </li>
+            <li class="slider-item">
+              <img src="./assets/trangchu/img/anhdep1.jpg" alt="slider image" />
+            </li>
+            <li class="slider-item">
+              <img src="./assets/trangchu/img/vn uk 2.jpg" alt="slider image" />
+            </li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-chevron-right slider-next"></i>
+      </div>
+
+      <div class="container">
+        <div class="attraction__infor">
+          <ul class="attaction__list">
+            <li class="attraction__item">
+              <div class="icon__center">
+                <div class="wow animated_ animate__zoomIn">
+                  <h3 class="attraction__icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                  </h3>
+                </div>
+              </div>
+              <a href="#" class="wow animated_ animate__zoomIn">
+                <h3 class="attraction__title">Truyền thống</h3>
+                <p class="attraction__desc">
+                  Trường đại học Mỏ địa chất có truyền thống từ lâu với các
+                  ngành đào tạo mũi nhọn trong lĩnh vực kĩ thuật và kinh tế.
+                </p>
+              </a>
+            </li>
+            <li class="attraction__item">
+              <div class="icon__center">
+                <div class="wow animated_ animate__zoomIn">
+                  <h3 class="attraction__icon">
+                    <i class="fa-solid fa-solid fa-question"></i>
+                  </h3>
+                </div>
+              </div>
+              <a href="#" class="wow animated_ animate__zoomIn">
+                <h3 class="attraction__title">VÌ SAO CHỌN HUMG ?</h3>
+                <p class="attraction__desc">
+                  Lý do bạn nên chọn Công nghệ thông tin trường Đại học Mỏ Địa
+                  chất (HUMG) !
+                </p>
+              </a>
+            </li>
+            <li class="attraction__item">
+              <div class="icon__center">
+                <div class="wow animated_ animate__zoomIn">
+                  <h3 class="attraction__icon">
+                    <i class="fa-solid fa-solid fa-info"></i>
+                  </h3>
+                </div>
+              </div>
+              <a href="#" class="wow animated_ animate__zoomIn">
+                <h3 class="attraction__title">TỔNG QUAN VỀ HUMG</h3>
+                <p class="attraction__desc">
+                  Khoa công nghệ thông tin trường Đại học Mỏ Địa chất (HUMG)
+                  được thành lập vào năm ...
+                </p>
+              </a>
+            </li>
+            <li class="attraction__item">
+              <div class="icon__center">
+                <div class="wow animated_ animate__zoomIn">
+                  <h3 class="attraction__icon">
+                    <i class="fa-solid fa-solid fa-comments"></i>
+                  </h3>
+                </div>
+              </div>
+              <a href="#" class="wow animated_ animate__zoomIn">
+                <h3 class="attraction__title">CÂU HỎI THƯỜNG GẶP</h3>
+                <p class="attraction__desc">
+                  Khoa công nghệ thông tin giải đáp thắc mắc cho sinh viên với
+                  những câu hỏi thường gặp
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="infor">
+          <div class="program1 program main-section">
+            <h2 class="program__heading title-1">
+              TUYỂN SINH ĐẠI HỌC CHÍNH QUY
+            </h2>
+            <div class="program__thumnail">
+              <img
+                src="./assets/trangchu/img/anh450X300.jpg"
+                alt="dai hoc chinh quy"
+                class="program__image wow animated_ animate__slideInRight"
+              />
             </div>
-            <i class="fa-solid fa-chevron-right slider-next"></i>
+            <ul class="program__notifications">
+              <li class="notification">
+                <a href="./sfit.html">
+                  <div class="noti__title">
+                    Thông báo v/v tuyển thành viên câu lạc bộ Tin học - CLB Học
+                    thuật xuất sắc nhất năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      Đại học Mỏ địa chất thông báo v/v CLB Tin học tuyển thành
+                      viên năm 2025...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 25/07/2025 16:39
+                  </div>
+                </a>
+              </li>
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo v/v vinh danh các thủ khoa đầu vào thi tốt nghiệp
+                    THPT năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      Các thủ khoa đầu vào trường đại học Mỏ địa chất năm 2025
+                      đều thuộc khoa công nghệ thông tin...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 01/09/2025 09:33
+                  </div>
+                </a>
+              </li>
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo về việc đăng ký xét tuyển đại học chính quy năm
+                    2025 - Phương thức xét tuyển điểm Kỳ thi tốt nghiệp THPT
+                    2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      HĐTS Trường Đại học Mỏ địa chất thông báo việc đăng ký xét
+                      tuyển vào đại học chính quy năm 2025 như sau:...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 25/06/2025 11:08
+                  </div>
+                </a>
+              </li>
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo v/v điểm sàn nhận hồ sơ đăng ký xét tuyển kết quả
+                    thi tốt nghiệp THPT năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      THÔNG BÁO ĐIỂM SÀN NHẬN HỒ SƠ ĐĂNG KÝ XÉT TUYỂN KẾT QUẢ
+                      THI TỐT NGHIỆP THPT VÀO ĐẠI HỌC CHÍNH QUY NĂM 2025...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 01/08/2025 09:33
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button class="secondary see-more">Xem thêm</button>
+          </div>
+          <div class="program2 program main-section">
+            <h2 class="program__heading title-1">
+              VINH DANH THÀNH TÍCH TỐT SINH VIÊN
+            </h2>
+            <div class="program__thumnail">
+              <img
+                src="./assets/trangchu/img/sv 5 tot humg 2019_2.jpg"
+                alt="dai hoc chinh quy"
+                class="program__image wow animated_ animate__slideInRight"
+              />
+            </div>
+            <ul class="program__notifications">
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo tuyển nghiên cứu sinh du học Nhật năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng
+                      kí nghiên cứu sinh du học Nhật năm 2025 như sau...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
+                  </div>
+                </a>
+              </li>
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo tuyển nghiên cứu sinh du học Đức năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng
+                      kí nghiên cứu sinh du học Nhật năm 2025 như sau...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
+                  </div>
+                </a>
+              </li>
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo tuyển nghiên cứu sinh du học Mỹ năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng
+                      kí nghiên cứu sinh du học Mỹ năm 2025 như sau...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
+                  </div>
+                </a>
+              </li>
+              <li class="notification">
+                <a href="#">
+                  <div class="noti__title">
+                    Thông báo tuyển nghiên cứu sinh du học Đức năm 2025
+                  </div>
+                  <div class="noti__desc">
+                    <p>
+                      Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng
+                      kí nghiên cứu sinh du học Nhật năm 2025 như sau...
+                    </p>
+                  </div>
+                  <div class="noti__time">
+                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button class="secondary see-more">Xem thêm</button>
+          </div>
+          <div class="majors-infor main-section">
+            <h2 class="title-1">Thông tin Ngành đào tạo</h2>
+            <ul class="major-programs">
+              <li class="major-program">
+                <div class="major-thumnail wow animated_ animate__rotateIn">
+                  <img src="./assets/trangchu/img/clc.jpg" alt="CLC" />
+                </div>
+                <div class="major-title title-2">Công nghệ thông tin CLC</div>
+                <a href="#" class="see-more">Xem thêm</a>
+              </li>
+              <li class="major-program">
+                <div class="major-thumnail wow animated_ animate__rotateIn">
+                  <img src="./assets/trangchu/" alt="Đại trà" />
+                </div>
+                <div class="major-title title-2">Khoa học máy tính</div>
+                <a href="#" class="see-more">Xem thêm</a>
+              </li>
+              <li class="major-program">
+                <div class="major-thumnail wow animated_ animate__rotateIn">
+                  <img src="./assets/trangchu/" alt="CLC" />
+                </div>
+                <div class="major-title title-2">Công nghệ thông tin</div>
+                <a href="#" class="see-more">Xem thêm</a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="container">
-            <div class="attraction__infor">
-                <ul class="attaction__list">
-                    <li class="attraction__item">
-                        <div class = "icon__center">
-                            <div class="wow animated_ animate__zoomIn">
-                                <h3 class="attraction__icon">
-                                    <i class="fa-solid fa-envelope-open-text"></i>
-                                </h3>
-                            </div>
-                        </div>
-                        <a href="#" class="wow animated_ animate__zoomIn">
-                            <h3 class="attraction__title">Truyền thống</h3>
-                            <p class="attraction__desc">Trường đại học Mỏ địa chất có truyền thống từ lâu với các ngành đào tạo mũi nhọn trong lĩnh vực kĩ thuật và kinh tế.</p>
-                        </a>
-                    </li>
-                    <li class="attraction__item">
-                        <div class = "icon__center">
-                            <div class="wow animated_ animate__zoomIn">
-                                <h3 class="attraction__icon">
-                                    <i class="fa-solid fa-solid fa-question"></i>
-                                </h3>
-                            </div>
-                        </div>
-                        <a href="#" class="wow animated_ animate__zoomIn">
-                            <h3 class="attraction__title">VÌ SAO CHỌN HUMG ? </h3>
-                            <p class="attraction__desc">Lý do bạn nên chọn Công nghệ thông tin trường Đại học Mỏ Địa chất (HUMG) !</p>
-                        </a>
-                    </li>
-                    <li class="attraction__item">
-                        <div class = "icon__center">
-                            <div class="wow animated_ animate__zoomIn">
-                                <h3 class="attraction__icon">
-                                    <i class="fa-solid fa-solid fa-info"></i>
-                                </h3>
-                            </div>
-                        </div>
-                        <a href="#" class="wow animated_ animate__zoomIn">
-                            <h3 class="attraction__title">TỔNG QUAN VỀ HUMG </h3>
-                            <p class="attraction__desc">Khoa công nghệ thông tin trường Đại học Mỏ Địa chất (HUMG) được thành lập vào năm ...</p>
-                        </a>
-                    </li>
-                    <li class="attraction__item">
-                        <div class = "icon__center">
-                            <div class="wow animated_ animate__zoomIn">
-                                <h3 class="attraction__icon">
-                                    <i class="fa-solid fa-solid fa-comments"></i>
-                                </h3>
-                            </div>
-                        </div>
-                        <a href="#" class="wow animated_ animate__zoomIn">
-                            <h3 class="attraction__title">CÂU HỎI THƯỜNG GẶP </h3>
-                            <p class="attraction__desc">Khoa công nghệ thông tin giải đáp thắc mắc cho sinh viên với những câu hỏi thường gặp</p>
-                        </a>
-                    </li>
-                </ul>
+        <button class="swipe-left-btn swipe-btn">
+          <i class="fa-solid fa-angles-left"></i>
+        </button>
+        <div class="side-infor">
+          <div class="heading-on-mobile">
+            <h3 class="title-1">Tuyển sinh HUMG</h3>
+          </div>
+
+          <!-- Authentication Section -->
+          <div class="auth-section side-section">
+            <h3 class="auth-title title-1">ĐĂNG NHẬP / ĐĂNG KÝ</h3>
+
+            <!-- Login Form -->
+            <div class="auth-form" id="loginForm">
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Mật khẩu"
+                required
+              />
+              <button class="auth-btn" onclick="login()">Đăng nhập</button>
+              <div class="auth-status" id="loginStatus"></div>
             </div>
+
+            <!-- Register Form -->
+            <div class="auth-form" id="registerForm" style="display: none">
+              <input
+                type="text"
+                id="registerName"
+                placeholder="Họ tên"
+                required
+              />
+              <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                id="registerPassword"
+                placeholder="Mật khẩu"
+                required
+              />
+              <button class="auth-btn" onclick="register()">Đăng ký</button>
+              <div class="auth-status" id="registerStatus"></div>
+            </div>
+
+            <!-- User Info -->
+            <div class="user-info" id="userInfo" style="display: none">
+              <div class="user-details">
+                <i class="fa-solid fa-user"></i>
+                <span id="userName">Tên người dùng</span>
+              </div>
+              <div class="user-actions">
+                <button
+                  class="auth-btn admin-btn"
+                  id="adminBtn"
+                  onclick="vaoTrangAdmin()"
+                  style="display: none"
+                >
+                  <i class="fa-solid fa-cog"></i> Trang Quản Trị
+                </button>
+                <button class="auth-btn logout-btn" onclick="logout()">
+                  Đăng xuất
+                </button>
+              </div>
+            </div>
+
+            <!-- Toggle Button -->
+            <div class="auth-toggle">
+              <button class="toggle-btn" onclick="toggleAuth()" id="toggleBtn">
+                Chưa có tài khoản? Đăng ký
+              </button>
+            </div>
+          </div>
+
+          <div class="news side-section">
+            <h3 class="news__title title-1">TIN TỨC HOT</h3>
+            <ul class="news__list">
+              <li class="news__item">
+                <a href="#">
+                  <h3 class="news__item-heading">
+                    Thông báo mức học phí năm 2025 - 2026
+                  </h3>
+                  <div class="news__item-time">
+                    <i class="fa-regular fa-clock"></i> 12/10/2025
+                  </div>
+                  <div class="news__item-tag">
+                    <i class="fa-solid fa-tag"></i> Học phí
+                  </div>
+                </a>
+              </li>
+              <li class="news__item">
+                <a href="#">
+                  <h3 class="news__item-heading">
+                    Đề án tuyển sinh đại học năm 2025
+                  </h3>
+                  <div class="news__item-time">
+                    <i class="fa-regular fa-clock"></i> 12/07/2025
+                  </div>
+                  <div class="news__item-tag">
+                    <i class="fa-solid fa-tag"></i> Tuyển sinh
+                  </div>
+                </a>
+              </li>
+              <li class="news__item">
+                <a href="#">
+                  <h3 class="news__item-heading">
+                    Trường Đại học Mỏ địa chất tăng cường hợp tác chuyên gia
+                    giáo sư nước ngoài
+                  </h3>
+                  <div class="news__item-time">
+                    <i class="fa-regular fa-clock"></i> 04/10/2025
+                  </div>
+                  <div class="news__item-tag">
+                    <i class="fa-solid fa-tag"></i> Tuyển sinh
+                  </div>
+                </a>
+              </li>
+              <li class="news__item">
+                <a href="#">
+                  <h3 class="news__item-heading">
+                    Thông báo tuyển sinh chương trình liên kết đào tạo với Công
+                    ty Nhật Bản
+                  </h3>
+                  <div class="news__item-time">
+                    <i class="fa-regular fa-clock"></i> 02/03/2025
+                  </div>
+                  <div class="news__item-tag">
+                    <i class="fa-solid fa-tag"></i> Tuyển sinh
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="container">
-            <div class="infor">
-                <div class="program1 program main-section">
-                    <h2 class="program__heading title-1">TUYỂN SINH ĐẠI HỌC CHÍNH QUY</h2>
-                    <div class="program__thumnail">
-                        <img src="./assets/trangchu/img/anh450X300.jpg" alt="dai hoc chinh quy" class="program__image wow animated_ animate__slideInRight">
-                    </div>
-                    <ul class="program__notifications">
-                        <li class="notification">
-                            <a href="./sfit.html">
-                                <div class="noti__title">Thông báo v/v tuyển thành viên câu lạc bộ Tin học - CLB Học thuật xuất sắc nhất năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>Đại học Mỏ địa chất thông báo v/v CLB Tin học tuyển thành viên năm 2025...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 25/07/2025 16:39
-                                </div>
-                            </a>
-                        </li>
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo v/v vinh danh các thủ khoa đầu vào thi tốt nghiệp THPT năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>Các thủ khoa đầu vào trường đại học Mỏ địa chất năm 2025 đều thuộc khoa công nghệ thông tin...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 01/09/2025 09:33
-                                </div>
-                            </a>
-                        </li>
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo về việc đăng ký xét tuyển đại học chính quy năm 2025 - Phương thức xét tuyển điểm Kỳ thi tốt nghiệp THPT 2025</div>
-                                <div class="noti__desc">
-                                    <p>HĐTS Trường Đại học Mỏ địa chất thông báo việc đăng ký xét tuyển vào đại học chính quy năm 2025 như sau:...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 25/06/2025 11:08
-                                </div>
-                            </a>
-                        </li>
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo v/v điểm sàn nhận hồ sơ đăng ký xét tuyển kết quả thi tốt nghiệp THPT năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>THÔNG BÁO ĐIỂM SÀN NHẬN HỒ SƠ ĐĂNG KÝ XÉT TUYỂN KẾT QUẢ THI TỐT NGHIỆP THPT VÀO ĐẠI HỌC CHÍNH QUY NĂM 2025...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 01/08/2025 09:33
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <button class="secondary see-more">Xem thêm</button>
-                </div>
-                <div class="program2 program main-section">
-                    <h2 class="program__heading title-1">VINH DANH THÀNH TÍCH TỐT SINH VIÊN</h2>
-                    <div class="program__thumnail">
-                        <img src="./assets/trangchu/img/sv 5 tot humg 2019_2.jpg" alt="dai hoc chinh quy" class="program__image wow animated_ animate__slideInRight">
-                    </div>
-                    <ul class="program__notifications">
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo tuyển nghiên cứu sinh du học Nhật năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng kí nghiên cứu sinh du học Nhật năm 2025 như sau...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
-                                </div>
-                            </a>
-                        </li>
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo tuyển nghiên cứu sinh du học Đức năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng kí nghiên cứu sinh du học Nhật năm 2025 như sau...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
-                                </div>
-                            </a>
-                        </li>
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo tuyển nghiên cứu sinh du học Mỹ năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng kí nghiên cứu sinh du học Mỹ năm 2025 như sau...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
-                                </div>
-                            </a>
-                        </li>
-                        <li class="notification">
-                            <a href="#">
-                                <div class="noti__title">Thông báo tuyển nghiên cứu sinh du học Đức năm 2025</div>
-                                <div class="noti__desc">
-                                    <p>Trường Đại học Mỏ địa chất thông báo bắt đầu nhận đơn đăng kí nghiên cứu sinh du học Nhật năm 2025 như sau...</p>
-                                </div>
-                                <div class="noti__time">
-                                    <i class="fa-regular fa-clock"></i> 20/07/2025 14:35
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <button class="secondary see-more">Xem thêm</button>
-                </div>
-                <div class="majors-infor main-section">
-                    <h2 class="title-1">Thông tin Ngành đào tạo</h2>
-                    <ul class="major-programs">
-                        <li class="major-program">
-                            <div class="major-thumnail wow animated_ animate__rotateIn"> 
-                                <img src="./assets/trangchu/img/clc.jpg" alt="CLC">
-                            </div>
-                            <div class="major-title title-2">
-                                Công nghệ thông tin CLC
-                            </div>
-                            <a href="#" class="see-more">Xem thêm</a>
-                        </li>
-                        <li class="major-program">
-                            <div class="major-thumnail wow animated_ animate__rotateIn">
-                                <img src="./assets/trangchu/" alt="Đại trà">
-                            </div>
-                            <div class="major-title title-2">
-                                Khoa học máy tính
-                            </div>
-                            <a href="#" class="see-more">Xem thêm</a>
-                        </li>
-                        <li class="major-program">
-                            <div class="major-thumnail wow animated_ animate__rotateIn"> 
-                                <img src="./assets/trangchu/" alt="CLC">
-                            </div>
-                            <div class="major-title title-2">
-                                Công nghệ thông tin
-                            </div>
-                            <a href="#" class="see-more">Xem thêm</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <button class="swipe-left-btn swipe-btn"><i class="fa-solid fa-angles-left"></i></button>
-            <div class="side-infor">
-                <div class="heading-on-mobile">
-                    <h3 class="title-1">Tuyển sinh HUMG</h3>
-                </div>
-
-                <div class="news side-section">
-                    <h3 class="news__title title-1">TIN TỨC HOT</h3>
-                    <ul class="news__list">
-                        <li class="news__item">
-                            <a href="#">
-                                <h3 class="news__item-heading">Thông báo mức học phí năm 2025 - 2026</h3>
-                                <div class="news__item-time">
-                                    <i class="fa-regular fa-clock"></i> 12/10/2025
-                                </div>
-                                <div class="news__item-tag"><i class="fa-solid fa-tag"></i> Học phí</div>
-                            </a>
-                        </li>
-                        <li class="news__item">
-                            <a href="#">
-                                <h3 class="news__item-heading">Đề án tuyển sinh đại học năm 2025</h3>
-                                <div class="news__item-time">
-                                    <i class="fa-regular fa-clock"></i> 12/07/2025
-                                </div>
-                                <div class="news__item-tag"><i class="fa-solid fa-tag"></i> Tuyển sinh</div>
-                            </a>
-                        </li>
-                        <li class="news__item">
-                            <a href="#">
-                                <h3 class="news__item-heading">Trường Đại học Mỏ địa chất tăng cường hợp tác chuyên gia giáo sư nước ngoài</h3>
-                                <div class="news__item-time">
-                                    <i class="fa-regular fa-clock"></i> 04/10/2025
-                                </div>
-                                <div class="news__item-tag"><i class="fa-solid fa-tag"></i> Tuyển sinh</div>
-                            </a>
-                        </li>
-                        <li class="news__item">
-                            <a href="#">
-                                <h3 class="news__item-heading">Thông báo tuyển sinh chương trình liên kết đào tạo với Công ty Nhật Bản</h3>
-                                <div class="news__item-time">
-                                    <i class="fa-regular fa-clock"></i> 02/03/2025
-                                </div>
-                                <div class="news__item-tag"><i class="fa-solid fa-tag"></i> Tuyển sinh</div>
-                            </a>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-        <button class="to-top"><a href="#"><i class="fa-solid fa-circle-up"></i></a></button>
+      </div>
+      <button class="to-top">
+        <a href="#"><i class="fa-solid fa-circle-up"></i></a>
+      </button>
     </section>
     <footer>
-        <img src="./assets/trangchu/img/logo-removebg-preview.png" alt="logo-humg">
-        <div class="contact">
-            <div class="contact__it1">
-                <div class="hn">
-                    <p><i class="fa-solid fa-location-dot fa-sm"></i>Địa chỉ: Hà Nội.</p>
-                    <p><i class="fa-solid fa-phone fa-sm"></i>Điện thoại: <a href="tel:(84.24) 37663311" style="color:#fff">84.24 37663311</a> - Fax: 84.24 37669613</p>
-                    <p><i class="fa-solid fa-envelope fa-sm"></i>Email: <a href="mailto:mail.humg.edu.vn" style="color:#fff">mail.humg.edu.vn</a></p>
-                </div>
-                <div class="map-hn">
-                    <h6>Trường Đại học Mỏ địa chất</h6>
-                    <iframe allowfullscreen="" height="120" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.0148204388106!2d105.77135407510644!3d21.072070280588136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134552defbed8e9%3A0x1584f79c805eb017!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBN4buPIC0gxJDhu4thIGNo4bqldA!5e0!3m2!1svi!2s!4v1753114132337!5m2!1svi!2s" style="border-radius:25px;border:0;width:100%"></iframe>
-                </div>
-            </div>
-            <div class="contact__it3">
-                <div class="apputc">
-                    <h6>App HUMG</h6>
-                    <div class="apputc__listapp">
-                        <a class="app-item" href="https://apps.apple.com/vn/app/eutc/id6447959887?l=vi" title="Apple Store" style="padding: 20px;">
-                            <span><i class="fab fa-apple app-icon"></i></span>
-                            <span class="app-title" style="font-size: 16px;">Apple Store</span>
-                        </a>
-                        <a class="app-item" href="https://play.google.com/store/apps/details?id=vn.edu.utc.eutc&amp;hl=vi-VN" title="Google Play" style="padding: 20px;">
-                            <span class="fab fa-google-play app-icon"></span>
-                            <span class="app-title" style="font-size: 16px;">Google Play</span>
-                        </a>
-                    </div>
-                </div>  
-                <div class="fl-humg">
-                    <h6>Theo dõi HUMG</h6>
-                    <div class="icon-contact">
-                        <a href="https://www.facebook.com/dhgtvtcaugiay" class="fb" style="padding: 20px;"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.youtube.com/@UTC_Channel" class="ytb" style="padding-right: 20px;"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="mailto:mail.humg.edu.vn" class="mail"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
+      <img
+        src="./assets/trangchu/img/logo-removebg-preview.png"
+        alt="logo-humg"
+      />
+      <div class="contact">
+        <div class="contact__it1">
+          <div class="hn">
+            <p>
+              <i class="fa-solid fa-location-dot fa-sm"></i>Địa chỉ: Hà Nội.
+            </p>
+            <p>
+              <i class="fa-solid fa-phone fa-sm"></i>Điện thoại:
+              <a href="tel:(84.24) 37663311" style="color: #fff"
+                >84.24 37663311</a
+              >
+              - Fax: 84.24 37669613
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope fa-sm"></i>Email:
+              <a href="mailto:mail.humg.edu.vn" style="color: #fff"
+                >mail.humg.edu.vn</a
+              >
+            </p>
+          </div>
+          <div class="map-hn">
+            <h6>Trường Đại học Mỏ địa chất</h6>
+            <iframe
+              allowfullscreen=""
+              height="120"
+              loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.0148204388106!2d105.77135407510644!3d21.072070280588136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134552defbed8e9%3A0x1584f79c805eb017!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBN4buPIC0gxJDhu4thIGNo4bqldA!5e0!3m2!1svi!2s!4v1753114132337!5m2!1svi!2s"
+              style="border-radius: 25px; border: 0; width: 100%"
+            ></iframe>
+          </div>
         </div>
-        
+        <div class="contact__it3">
+          <div class="apputc">
+            <h6>App HUMG</h6>
+            <div class="apputc__listapp">
+              <a
+                class="app-item"
+                href="https://apps.apple.com/vn/app/eutc/id6447959887?l=vi"
+                title="Apple Store"
+                style="padding: 20px"
+              >
+                <span><i class="fab fa-apple app-icon"></i></span>
+                <span class="app-title" style="font-size: 16px"
+                  >Apple Store</span
+                >
+              </a>
+              <a
+                class="app-item"
+                href="https://play.google.com/store/apps/details?id=vn.edu.utc.eutc&amp;hl=vi-VN"
+                title="Google Play"
+                style="padding: 20px"
+              >
+                <span class="fab fa-google-play app-icon"></span>
+                <span class="app-title" style="font-size: 16px"
+                  >Google Play</span
+                >
+              </a>
+            </div>
+          </div>
+          <div class="fl-humg">
+            <h6>Theo dõi HUMG</h6>
+            <div class="icon-contact">
+              <a
+                href="https://www.facebook.com/dhgtvtcaugiay"
+                class="fb"
+                style="padding: 20px"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@UTC_Channel"
+                class="ytb"
+                style="padding-right: 20px"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="mailto:mail.humg.edu.vn" class="mail"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-    <p style="text-align: center; background-color: #012750; padding-top: 30px;padding-bottom: 80px;"><a href="#" style="font-size: 14px;">@2025 Bản quyền thuộc Trường Đại học Mỏ Địa Chất</a></p>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <p
+      style="
+        text-align: center;
+        background-color: #012750;
+        padding-top: 30px;
+        padding-bottom: 80px;
+      "
+    >
+      <a href="#" style="font-size: 14px"
+        >@2025 Bản quyền thuộc Trường Đại học Mỏ Địa Chất</a
+      >
+    </p>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/trangchu/base.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
 </html>

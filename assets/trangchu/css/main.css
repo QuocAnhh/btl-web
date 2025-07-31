@@ -1,214 +1,366 @@
-slider
-
-.slider, .slider img {
-    width: 100%;
+slider .slider,
+.slider img {
+  width: 100%;
 }
 
 .slider {
-    width: 100%;
+  width: 100%;
 }
 
 .infor {
-    width: 66.667%;
+  width: 66.667%;
 }
 
 .attraction__infor {
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 0 8px var(--text-color);
-    margin-top: 40px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 8px var(--text-color);
+  margin-top: 40px;
 }
 
 .attaction__list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
 }
 
 .attraction__item {
-    width: 25%;
-    font-size: 1.6rem;
-    color: #fff;
-    position: relative;
+  width: 25%;
+  font-size: 1.6rem;
+  color: #fff;
+  position: relative;
 }
 
 .attraction__item a:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .attraction__item a {
-    display: inline-block;
-    padding: 40px 30px;
-    color: #fff;
-    transition: 0.25s ease;
+  display: inline-block;
+  padding: 40px 30px;
+  color: #fff;
+  transition: 0.25s ease;
 }
 
 .attraction__icon {
-    top: 0%;
-    left: 0%;
-    transform: (100%, 50%);
-    font-size: 2.4rem;
-    border-radius: 50%;
-    color: #fff;
-    border: 4px solid #fff;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  top: 0%;
+  left: 0%;
+  transform: (100%, 50%);
+  font-size: 2.4rem;
+  border-radius: 50%;
+  color: #fff;
+  border: 4px solid #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .attraction__title {
-    font-weight: 600;
-    height: 64px;
-    margin-top: 16px;
+  font-weight: 600;
+  height: 64px;
+  margin-top: 16px;
 }
 
 .attraction__desc {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .attraction__item:nth-child(odd) {
-    background-color: var(--main-bg);
+  background-color: var(--main-bg);
 }
 
 .attraction__item:nth-child(even) {
-    background-color: var(--main-blue);
+  background-color: var(--main-blue);
 }
 
 /** chương trình đào tạo */
 
-
 .program__image {
-    border-radius: 15px;
-    max-width: 450px;
-    height: 300px;
-    object-fit: cover;
-    box-shadow: 3px 4px 6px var(--text-color);
-    text-align: center;
-    margin-top: 24px;
-    margin-left: 24px;
+  border-radius: 15px;
+  max-width: 450px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 3px 4px 6px var(--text-color);
+  text-align: center;
+  margin-top: 24px;
+  margin-left: 24px;
 }
 
 .program__notifications {
-    margin-top: 12px;
-    list-style-type: none;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    transition: 0.3s ease;
+  margin-top: 12px;
+  list-style-type: none;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  transition: 0.3s ease;
 }
 
 .notification {
-    padding: 12px 24px;
-    transition: all 0.5s ease;
+  padding: 12px 24px;
+  transition: all 0.5s ease;
 }
 
 .notification + .notification {
-    border-top: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }
 
 .notification:hover {
-    background-color: var(--second-bg);
+  background-color: var(--second-bg);
 }
 
 .noti__title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-top: 12px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 12px;
 }
 
 .noti__desc p {
-    padding: 16px 0;
+  padding: 16px 0;
 }
 
 /** Khoa Ngành */
 
 .major-programs {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: var(--second-bg);
-    border-radius: 4px;
-    padding: 40px 20px;
-    margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--second-bg);
+  border-radius: 4px;
+  padding: 40px 20px;
+  margin-top: 16px;
 }
 
 .major-program {
-    padding: 0 12px;
-    width: 33%;
-    text-align: center;
+  padding: 0 12px;
+  width: 33%;
+  text-align: center;
 }
 
 .major-thumnail {
-    width: 124px;
-    height: 124px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 6px;
-    border: 2px solid var(--main-yellow);
-    cursor: pointer;
-    transition: 0.25s ease;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 6px;
+  border: 2px solid var(--main-yellow);
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .major-thumnail:hover {
-    padding: 4px;
-    border-width: 3px;
+  padding: 4px;
+  border-width: 3px;
 }
 
 .major-thumnail img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-*demo
-article {
-    margin-top: 32px;
+*demo article {
+  margin-top: 32px;
 }
 
 .thumnail {
-    position: relative;
+  position: relative;
 }
 
 strong {
-    color: var(--main-yellow);
-    font-weight: 500;
+  color: var(--main-yellow);
+  font-weight: 500;
 }
 
 .content p {
-    margin: 8px 0 0 12px;
+  margin: 8px 0 0 12px;
 }
 
 .content a {
-    color: var(--main-bg);
+  color: var(--main-bg);
 }
 
 .content h4 {
-    font-weight: 500;
-    font-size: 1.8rem;
-    text-align: right;
-    margin-top: 32px;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-align: right;
+  margin-top: 32px;
 }
 
 .thumnail-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 4px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .thumnail-title {
-    position: absolute;
-    left: 5%;
-    width: 90%;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 4px;
-    text-align: center;
-    padding: 10px;
-    margin: 0;
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Authentication styles for side-infor */
+.auth-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.auth-title {
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: #1d376c;
+  box-shadow: 0 0 0 2px rgba(29, 55, 108, 0.1);
+}
+
+.auth-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #1d376c;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: #152a4f;
+}
+
+.logout-btn {
+  background: #dc3545;
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.logout-btn:hover {
+  background: #c82333;
+}
+
+.auth-status {
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.auth-status.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.auth-status.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.auth-status.loading {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.user-details i {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+#userName {
+  font-size: 14px;
+  color: #1d376c;
+  font-weight: 600;
+}
+
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.admin-btn {
+  background: #1d376c !important;
+  color: white !important;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.admin-btn:hover {
+  background: #1e3a8a !important;
+  transform: translateY(-2px);
+}
+
+.auth-toggle {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #152a4f;
 }
